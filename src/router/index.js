@@ -1,6 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../components/index1_1.vue'
+import Pal1_1 from '../components/pal1_1.vue'
+import Isr1_1 from '../components/isr1_1.vue'
+import Pal2 from '../components/pal2_1.vue'
+import Isr2 from '../components/isr2_1.vue'
+import Pal3 from '../components/pal3_1.vue'
+import Isr3 from '../components/isr3_1.vue'
+import Test from '../components/title.vue'
 
 Vue.use(VueRouter)
 
@@ -11,14 +18,39 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue')
-    }
+    path: '/pal1',
+    name: 'Pal1',
+    component: Pal1_1
+  },
+  {
+    path: '/israel1',
+    name: 'Isr1',
+    component: Isr1_1
+  },
+  {
+    path: '/pal2',
+    name: 'Pal2',
+    component: Pal2
+  },
+  {
+    path: '/israel2',
+    name: 'Isr2',
+    component: Isr2
+  },
+  {
+    path: '/pal3',
+    name: 'Pal3',
+    component: Pal3
+  },
+  {
+    path: '/israel3',
+    name: 'Isr3',
+    component: Isr3
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: Test
   }
 ]
 
