@@ -54,10 +54,49 @@ const routes = [
   }
 ]
 
+var scroll_pos
+var fix
+
+function scrollPos(){
+  var bod = document.body;
+  var par = bod.parentNode;
+  console.log((bod.scrollTop || par.scrollTop));
+  scroll_pos = (bod.scrollTop || par.scrollTop);
+}
+
+document.addEventListener("scroll", scrollPos)
+
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    // } else if(to.name == "Home") {
+    //   console.log(to);
+    //   // return window.scrollTo(0,3000);
+    //   return new Promise((resolve, reject) =>{
+    //     setTimeout(() =>{
+    //       console.log("timeout");
+    //       resolve({x: 0, y: 5000}, 500)
+    //     })
+    //   })
+    } else {
+      console.log("out");
+      return { x: 0, y: 0}
+    }
+  }
 })
+
+// router.beforeEach((to, from, next) =>{
+//   if(from.name == "Home"){
+//       fix = scroll_pos;
+//       // console.log(fix);
+//       next();
+//   } else {
+//     next();
+//   }
+// })
 
 export default router
