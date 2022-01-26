@@ -73,30 +73,11 @@ const router = new VueRouter({
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
-    // } else if(to.name == "Home") {
-    //   console.log(to);
-    //   // return window.scrollTo(0,3000);
-    //   return new Promise((resolve, reject) =>{
-    //     setTimeout(() =>{
-    //       console.log("timeout");
-    //       resolve({x: 0, y: 5000}, 500)
-    //     })
-    //   })
     } else {
       console.log("out");
       return { x: 0, y: 0}
     }
   }
 })
-
-// router.beforeEach((to, from, next) =>{
-//   if(from.name == "Home"){
-//       fix = scroll_pos;
-//       // console.log(fix);
-//       next();
-//   } else {
-//     next();
-//   }
-// })
 
 export default router
